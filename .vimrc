@@ -7,6 +7,9 @@ set autoindent
 set ts=4
 set sw=4
 
+" for my OSX
+set backspace=indent,eol,start
+
 if empty(glob('~/.vim/autoload/plug.vim'))
 	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -47,7 +50,7 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+"Plug '~/my-prototype-plugin'
 
 " [Link] start here
 " On-demand loading
@@ -95,6 +98,12 @@ colorscheme zenburn
 "colorscheme material-monokai
 "let g:airline_theme='materialmonokai'
 "let g:materialmonokai_italic=1
+
+Plug 'airblade/vim-gitgutter'
+set updatetime=100
+
+# a good git tool
+Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
